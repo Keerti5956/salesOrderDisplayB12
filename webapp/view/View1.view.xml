@@ -3,6 +3,7 @@
     xmlns="sap.m" xmlns:core="sap.ui.core"
     xmlns:tab="sap.ui.table">
     <Page id="page" title="{i18n>title}">
+    <Button text="check git"></Button>
         <content>
             <ComboBox items="{/BusinessPartnerSet}" selectionChange="onSelect">
         <items>
