@@ -1,0 +1,60 @@
+<mvc:View controllerName="app.salesorderdisplay.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core"
+    xmlns:tab="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <ComboBox items="{/BusinessPartnerSet}" selectionChange="onSelect">
+        <items>
+        <core:Item key="{BusinessPartnerID}" text="{BusinessPartnerID}"></core:Item>
+        </items>
+         </ComboBox>
+            <tab:Table rows="{SOModel>/results}">
+                <tab:columns>
+                    <tab:Column>
+                        <tab:label>
+                            <Label text="BusinessPartnerID"></Label>
+                        </tab:label>
+                        <tab:template>
+                            <Text text="{SOModel>CustomerID}"></Text>
+                        </tab:template>
+                    </tab:Column>
+                    <tab:Column>
+                        <tab:label>
+                            <Label text="CompanyName"></Label>
+                        </tab:label>
+                        <tab:template>
+                       
+                            <Text text="{SOModel>CustomerName}"></Text>
+                        </tab:template>
+                    </tab:Column>
+                    <!--<tab:Column>-->
+                    <!--    <tab:label>-->
+                    <!--        <Label text="Currency"></Label>-->
+                    <!--    </tab:label>-->
+                    <!--    <tab:template>-->
+                    <!--        <Text text="{danModel>currency}"></Text>-->
+                    <!--    </tab:template>-->
+                    <!--</tab:Column>-->
+                    <tab:Column>
+                        <tab:label>
+                            <Label text="WebAddress"></Label>
+                            <!--emp sal is absolute path-->
+                        </tab:label>
+                        <tab:template>
+                            <Text text="{SOModel>CurrencyCode}"></Text>
+                        </tab:template>
+                    </tab:Column>
+                    <tab:Column>
+                        <tab:label>
+                            <Label text="GrossAmount"></Label>
+                        </tab:label>
+                        <tab:template>
+                            <Text text="{SOModel>GrossAmount}"></Text>
+                        </tab:template>
+                    </tab:Column>
+                </tab:columns>
+            </tab:Table>
+        </content>
+    </Page>
+</mvc:View>
